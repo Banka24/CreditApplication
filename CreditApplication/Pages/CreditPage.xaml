@@ -1,0 +1,44 @@
+﻿<Page x:Class="CreditApplication.Pages.CreditPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CreditApplication.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Кредиты" Style="{StaticResource base_page}" IsVisibleChanged="Page_IsVisibleChanged">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Margin="10">
+            <Button x:Name="BtnAdd" Style="{StaticResource BtnImage}" Click="BtnAdd_Click">
+                <Image Source="/Assets/add.png" Height="100" Width="100" />
+            </Button>
+            <Button x:Name="BtnEdit" Style="{StaticResource BtnImage}" Click="BtnEdit_Click">
+                <Image Source="/Assets/edit.png" Height="100" Width="100" />
+            </Button>
+            <Button x:Name="BtnDell" Style="{StaticResource BtnImage}" Click="BtnDell_Click">
+                <Image Source="/Assets/dell.png" Height="100" Width="100" />
+            </Button>
+            <Button x:Name="BtnRefresh" Style="{StaticResource BtnImage}" Click="BtnRefresh_Click">
+                <Image Source="/Assets/refresh.png" Height="100" Width="100" />
+            </Button>
+            <Button x:Name="BtnExit" Style="{StaticResource BtnImage}" Click="BtnExit_Click">
+                <Image Source="/Assets/exit.png" Height="100" Width="100" />
+            </Button>
+        </StackPanel>
+        <DataGrid x:Name="DataGridCredit" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Клиент" Width="*" Binding="{Binding Client.ClientName}"/>
+                <DataGridTextColumn Header="Адрес клиента" Width="*" Binding="{Binding Client.Adress}"/>
+                <DataGridTextColumn Header="Телефон" Width="*" Binding="{Binding Client.Phone}"/>
+                <DataGridTextColumn Header="Вид кредита" Width="*" Binding="{Binding KindCredit.KindCreditName}"/>
+                <DataGridTextColumn Header="Сумма" Width="*" Binding="{Binding CreditSumm, StringFormat='c', ConverterCulture='ru-RU'}"/>
+                <DataGridTextColumn Header="Дата" Width="*" Binding="{Binding DateOfIssue, StringFormat={}{0:dd.MM.yyyy}}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>
