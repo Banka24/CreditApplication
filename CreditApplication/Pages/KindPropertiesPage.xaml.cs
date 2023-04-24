@@ -13,22 +13,22 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CreditApplication.Pages;
 
 namespace CreditApplication.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для CreditPage.xaml
+    /// Логика взаимодействия для KindPropertiesPage.xaml
     /// </summary>
-    public partial class CreditPage : Page
+    public partial class KindPropertiesPage : Page
     {
-        public CreditPage()
+        public KindPropertiesPage()
         {
             InitializeComponent();
         }
-
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
-            DataGridCredit.ItemsSource = CreditsEntities.GetContext().Credits.ToList();
+            DataGridKindProperties.ItemsSource = CreditsEntities.GetContext().KindProperties.ToList();
         }
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
@@ -47,5 +47,6 @@ namespace CreditApplication.Pages
         {
 
         }
+        
     }
 }

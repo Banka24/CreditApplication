@@ -1,4 +1,4 @@
-﻿<Page x:Class="CreditApplication.Pages.CreditPage"
+﻿<Page x:Class="CreditApplication.Pages.KindPropertiesPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:CreditApplication.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Кредиты" Style="{StaticResource base_page}" IsVisibleChanged="Page_IsVisibleChanged">
+      Title="Виды собственности" Style="{StaticResource base_page}" IsVisibleChanged="Page_IsVisibleChanged">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -27,14 +27,9 @@
                 <Image Source="/Assets/refresh.png" Height="100" Width="100" />
             </Button>
         </StackPanel>
-        <DataGrid x:Name="DataGridCredit" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True">
+        <DataGrid x:Name="DataGridKindProperties" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" MaxWidth="400" HorizontalAlignment="Left">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Клиент" Width="*" Binding="{Binding Client.ClientName}"/>
-                <DataGridTextColumn Header="Адрес клиента" Width="*" Binding="{Binding Client.Adress}"/>
-                <DataGridTextColumn Header="Телефон" Width="*" Binding="{Binding Client.Phone}"/>
-                <DataGridTextColumn Header="Вид кредита" Width="*" Binding="{Binding KindCredit.KindCreditName}"/>
-                <DataGridTextColumn Header="Сумма" Width="*" Binding="{Binding CreditSumm, StringFormat='c', ConverterCulture='ru-RU'}"/>
-                <DataGridTextColumn Header="Дата" Width="*" Binding="{Binding DateOfIssue, StringFormat={}{0:dd.MM.yyyy}}"/>
+                <DataGridTextColumn Header="Вид собственности" Width="*" Binding="{Binding KindPropertyName}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

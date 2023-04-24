@@ -30,19 +30,23 @@ namespace CreditApplication
 
         public void BtnClients_Click(object sender, RoutedEventArgs e)
         {
-
+            MainFrame.Content = new ClientsPage();
         }
         public void BtnKindProperty_Click(object sender, RoutedEventArgs e)
         {
-
+            MainFrame.Content = new KindPropertiesPage();
         }
         public void BtnKindCredit_Click(object sender, RoutedEventArgs e)
         {
-
+            MainFrame.Content = new KindCreditsPage();
         }
         public void BtnCredits_Click(object sender, RoutedEventArgs e)
         {
             MainFrame.Content = new CreditPage();
+        }
+        private void BtnExit_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

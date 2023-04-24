@@ -16,7 +16,10 @@
             <Button x:Name="BtnClients" Content="Клиенты" Click="BtnClients_Click"/>
             <Button x:Name="BtnKindProperty" Content="Виды собственности" Click="BtnKindProperty_Click"/>
             <Button x:Name="BtnKindCredit" Content="Виды кредитов" Click="BtnKindCredit_Click"/>
-            <Button x:Name="BtnCredits" Content="Кредиты" Click="BtnCredits_Click"/>            
+            <Button x:Name="BtnCredits" Content="Кредиты" Click="BtnCredits_Click"/>
+            <Button x:Name="BtnExit" Style="{StaticResource BtnImage}" Click="BtnExit_Click">
+                <Image Source="/Assets/exit.png" Height="100" Width="100" />
+            </Button>
         </StackPanel>
         <Frame x:Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden"/>
     </Grid>
