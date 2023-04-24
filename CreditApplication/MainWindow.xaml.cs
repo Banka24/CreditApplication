@@ -46,7 +46,7 @@ namespace CreditApplication
         }
         private void BtnExit_Click(object sender, RoutedEventArgs e)
         {
-
+            Close();
         }
     }
 }
