@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CreditApplication.Windows"
         mc:Ignorable="d"
-        Title="Добавление/Удаление клиента" Style="{StaticResource base_window}" MinHeight="400" MinWidth="500" Height="400" Width="500" ResizeMode="NoResize"
+        Title="Добавление/Редактирование клиента" Style="{StaticResource base_window}" MinHeight="400" MinWidth="500" Height="400" Width="500" ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -30,7 +30,7 @@
 
         <TextBox Grid.Row="1" Grid.Column="1" Width="260" Text="{Binding ClientName}"/>
         <ComboBox x:Name="ComboBoxKindProperty" Grid.Row="2" Grid.Column="1" Width="260" DisplayMemberPath="KindPropertyName" SelectedItem="{Binding KindProperty}"/>
-        <TextBox Grid.Row="3" Grid.Column="1" Width="260" Height="30" Text="{Binding Adress}" TextWrapping="Wrap"/>
+        <TextBox Grid.Row="3" Grid.Column="1" Width="260" Height="30" Text="{Binding Adress}" TextWrapping="Wrap"/> 
         <TextBox Grid.Row="4" Grid.Column="1" Width="260" Text="{Binding Phone}"/>
         <TextBox Grid.Row="5" Grid.Column="1" Width="260" Text="{Binding ContactFace}"/>
         <Button x:Name="BtnOk" Grid.Row="6" Grid.ColumnSpan="2" HorizontalAlignment="Center" Width="70" Content="OK" Click="BtnOk_Click" Margin="0,5"/>

@@ -1,0 +1,35 @@
+﻿<Window x:Class="CreditApplication.Windows.AddOrEditKindCredit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CreditApplication.Windows"
+        mc:Ignorable="d"
+        Title="Добавление/Редактирование кредита" WindowStartupLocation="CenterScreen" Style="{StaticResource base_window}" MinHeight="400" MinWidth="500" Height="400" Width="500">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Вид кредита:" Style="{StaticResource item_textblock}" Grid.Row="1"/>
+        <TextBlock Text="Условие:" Style="{StaticResource item_textblock}" Grid.Row="2"/>
+        <TextBlock Text="Ставка:" Style="{StaticResource item_textblock}" Grid.Row="3"/>
+        <TextBlock Text="Срок:" Style="{StaticResource item_textblock}" Grid.Row="4"/>
+
+        <TextBox Grid.Row="1" Grid.Column="1" Width="260" Text="{Binding KindCreditName}"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Width="260" Text="{Binding Conditions}" Height="30" TextWrapping="Wrap"/>
+        <TextBox x:Name="TbRate" Grid.Row="3" Grid.Column="1" Width="260" Text="{Binding Rate}"/>
+        <TextBox x:Name="TbTerm" Grid.Row="4" Grid.Column="1" Width="260" Text="{Binding Term}"/>
+        <Button x:Name="BtnOk" Grid.Row="5" Grid.ColumnSpan="2" HorizontalAlignment="Center" Width="70" Content="OK" Click="BtnOk_Click" Margin="0,5"/>
+    </Grid>
+</Window>

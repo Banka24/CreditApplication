@@ -47,7 +47,7 @@ namespace CreditApplication.Pages
         }
         private void BtnDell_Click(object sender, RoutedEventArgs e)
         {
-            if(DataGridClients.SelectedItems is Client client)
+            if(DataGridClients.SelectedItem is Client client)
             {
                 try
                 {

@@ -70,6 +70,15 @@
     <Compile Include="Windows\AddOrEditClient.xaml.cs">
       <DependentUpon>AddOrEditClient.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\AddOrEditCredit.xaml.cs">
+      <DependentUpon>AddOrEditCredit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AddOrEditKindCredit.xaml.cs">
+      <DependentUpon>AddOrEditKindCredit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AddOrEditProperty.xaml.cs">
+      <DependentUpon>AddOrEditProperty.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -130,6 +139,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\AddOrEditClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AddOrEditCredit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AddOrEditKindCredit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AddOrEditProperty.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

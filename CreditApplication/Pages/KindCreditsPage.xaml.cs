@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CreditApplication.Pages;
+using CreditApplication.Windows;
 
 namespace CreditApplication.Pages
 {
@@ -28,24 +29,47 @@ namespace CreditApplication.Pages
         }
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
+            CreditsEntities.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
             DataGridKindCredits.ItemsSource = CreditsEntities.GetContext().KindCredits.ToList();
         }
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
-
+            AddOrEditKindCredit addOrEditKindCredit = new AddOrEditKindCredit(null);
+            addOrEditKindCredit.Show();
         }
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
-
+            if(DataGridKindCredits.SelectedItem is KindCredit kindCredit)
+            {
+                AddOrEditKindCredit addOrEditKindCredit = new AddOrEditKindCredit(kindCredit);
+                addOrEditKindCredit.Show();
+            }
         }
         private void BtnDell_Click(object sender, RoutedEventArgs e)
         {
-
+            if (DataGridKindCredits.SelectedItem is KindCredit kindCredit)
+            {
+                try
+                {
+                    MessageBoxResult result = MessageBox.Show("Удалить данную запись?", "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Information);
+                    if (result == MessageBoxResult.Yes)
+                    {
+                        CreditsEntities.GetContext().KindCredits.Remove(kindCredit);
+                        CreditsEntities.GetContext().SaveChanges();
+                        Page_IsVisibleChanged(null, default(DependencyPropertyChangedEventArgs));
+                        MessageBox.Show("Запись удалена");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
         private void BtnRefresh_Click(object sender, RoutedEventArgs e)
         {
-
+            Page_IsVisibleChanged(null, default(DependencyPropertyChangedEventArgs));
         }
     }
 }
